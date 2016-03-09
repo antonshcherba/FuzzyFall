@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="DetectorSettings" representedClassName=".DetectorSettings" syncable="YES">
+        <attribute name="activityDuration" optional="YES" attributeType="Integer 64" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="activityUnits" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emergencyEmail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emergencyPhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userAlertEnabled" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="userAlertSound" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="userAlertVibration" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="user" maxCount="1" deletionRule="Cascade" destinationEntity="User" inverseName="detectorSettings" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="FallTime" representedClassName=".FallTime" syncable="YES">
+        <attribute name="startTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="stopTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Measure" representedClassName=".Measure" syncable="YES">
+        <attribute name="avgAccel" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="pitch" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="pitchDiff" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="roll" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="xAccel" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="xRot" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="yAccel" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="yaw" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="yRot" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="zAccel" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="zRot" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName=".User" syncable="YES">
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="detectorSettings" maxCount="1" deletionRule="Cascade" destinationEntity="DetectorSettings" inverseName="user" inverseEntity="DetectorSettings" syncable="YES"/>
+        <relationship name="userSettings" maxCount="1" deletionRule="Cascade" destinationEntity="UserSettings" inverseName="user" inverseEntity="UserSettings" syncable="YES"/>
+    </entity>
+    <entity name="UserSettings" representedClassName=".UserSettings" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" maxCount="1" deletionRule="Cascade" destinationEntity="User" inverseName="userSettings" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DetectorSettings" positionX="-63" positionY="90" width="128" height="165"/>
+        <element name="FallTime" positionX="90" positionY="279" width="128" height="75"/>
+        <element name="Measure" positionX="-54" positionY="375" width="128" height="255"/>
+        <element name="User" positionX="108" positionY="90" width="128" height="103"/>
+        <element name="UserSettings" positionX="259" positionY="297" width="128" height="90"/>
+    </elements>
+</model>
